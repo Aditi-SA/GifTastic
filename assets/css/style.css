@@ -1,0 +1,85 @@
+body{	
+	background: url("../images/background1.jpg") no-repeat center center fixed;
+    background-size: cover;
+    -webkit-background-size: cover;
+}
+
+h1, .jumbotron{
+	font-family: 'Spicy Rice', cursive;
+	font-size: 3em;
+	margin-top: 3vh;
+	margin-bottom: 1vh;
+}
+
+.row{
+	margin-bottom: 4vh;
+	margin-left: 3vw;
+    margin-right: 3vw;
+    border: #efad07;
+}
+
+.btn{
+	font-family: 'Cairo', sans-serif;
+    font-size: 16px;    
+	background-color: #9ff72d;
+	color: rgb(0, 0, 0);
+    padding: 1px 2vw;
+    margin: 3px;
+}
+.labelFont{
+    color: yellow;  
+    margin-bottom: 4px;
+}
+
+.btn:hover{
+    color: #0bb6d4c5;    
+}
+
+.btn:focus{
+	outline: 2px solid #efad07 !important;
+	background-color: #a20ddd;
+	color: #eaebd3;
+}
+
+.cartoon-button{
+	margin: .5vh 1vw;
+}
+
+.dotted-border{
+	border: 6px dotted #efad07;
+}
+
+.comic-sans-font{
+	font-family: "Comic Sans MS";
+	font-size: 18px;
+	font-weight: 800;
+	color: black;
+}
+
+.gif-image{
+	margin-top: 1vh;
+	margin-bottom: 1vh;
+}
+
+.individual-gif-container{
+	float: left;
+	margin: 2vh 3vw 2vh 3vw;
+}
+
+#submit{
+	margin-top: 1.5vh;
+}
+
+#cartoon-show{
+	margin-top: 1.5vh;
+	width: 100%;
+}
+
+#cartoon-show:focus{
+	outline: 2px solid #efad07 !important;
+}
+
+#gif-container{
+	font-size: 22px;
+}
+

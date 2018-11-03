@@ -73,7 +73,7 @@ function displaygifs(topic) {
         })
         .catch(function (error) {
             console.log("error");
-            alert("System down! code is broken!")
+            alert("The topic you search for exists out of the scope!")
         });
 }
 
