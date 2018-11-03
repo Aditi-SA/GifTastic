@@ -1,6 +1,7 @@
 # GifTastic
 
-* This application communicates with the API Giphy.
+* This application communicates with the API Giphy. 
+* This application uses Javascript, JQuery and AJAX.
 
 The applicateion is pre-loaded with some default topics. 
 It also comes with an option to serach for new topics per user's desire. Once the new topic is typed in the tab and submitted, a corresponding button is generated for it.
