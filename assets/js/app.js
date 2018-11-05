@@ -34,22 +34,23 @@ function displaygifs(topic) {
         .then(function (response) {
             console.log("AJAX response: ");
             console.log(response);
-            
+
             // Storing an array of results in the results variable
             var results = response.data;
             console.log("AJAX results data: ")
             console.log(results);
-            
+
             // Looping over 10 result item
             for (var i = 0; i < results.length; i++) {
                 // Creating a div 
                 var gifDIV = $("<div>");
-                
+
                 // Storing the result item's rating
                 var rating = results[i].rating;
+                var Gtitle = results[i].title;
 
                 // Creating a paragraph tag with the result item's rating
-                var p = $("<p>").text("Rating: " + rating);
+                var p = $("<p>").text("Rating: " + rating + " ||    Title: " + Gtitle);
 
                 // Creating an image tag
                 var TopicImage = $("<img>");
@@ -83,21 +84,46 @@ $(document).ready(function () {
     //Adding new Giphy topic    
     $("#SubmitBtn").on("click", function (event) {
         event.preventDefault();
+
         var topic = $("#addGIF").val();
         console.log(topic);
-        //renderButtons([topic]);
-        var newbtn = $("<button>");
-        //add class
-        newbtn.addClass("Giffybtn btn btn-primary");
-        //add a data attribute
-        newbtn.attr("data-name", topic);
-        // set button as text
-        newbtn.text(topic);
-        //append the button 'newbtn' to GifTopics div
-        $("#GifTopics").append(newbtn);
+
+        var topicValue = $("#addGIF").val().trim();
+        topic = topicValue;
+        topicValue = topicValue.toLowerCase();
+        console.log(topicValue);
+
+        var found = DefaultTopics.find(function (element) {
+            return element === topicValue;
+            console.log("topicValue: " + topicValue);
+        });
+
+        if (topicValue === "") {
+            $("#warning").text("Input value cannnot be empty!");
+            setTimeout(function () {
+                $("#warning").empty();
+                //$("#topicInput").empty();
+            }, 3000);
+        } else if (topicValue === found) {
+            $("#warning").text("Topic already exists!");
+            setTimeout(function () {
+                $("#warning").empty();
+                //$("#topicInput").empty();
+            }, 3000);
+        } else {
+            //renderButtons([topic]);
+            var newbtn = $("<button>");
+            //add class
+            newbtn.addClass("Giffybtn btn btn-primary");
+            //add a data attribute
+            newbtn.attr("data-name", topic);
+            // set button as text
+            newbtn.text(topic);
+            //append the button 'newbtn' to GifTopics div
+            $("#GifTopics").append(newbtn);
+        }
     });
 
-    //$(".Giffybtn").on("click", ".button" ,function (event) {
     $(".DefTopics").on("click", ".Giffybtn", function (event) {
         event.preventDefault();
         //$("#GifView").empty();
